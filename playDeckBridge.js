@@ -54,9 +54,6 @@ var playDeckBridge = (function() {
             console.log(playdeck.value);
             _unityInstance?.SendMessage("PlayDeckBridge", "StartAdHandler", JSON.stringify(playdeck.value) );
         }
-        else if (playdeck.method === "setScore") {
-            console.log(playdeck);
-        }
     }
 
     return {
