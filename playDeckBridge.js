@@ -12,9 +12,6 @@ var playDeckBridge = (function() {
         if (playdeck.method === "getUserProfile") {
             _unityInstance?.SendMessage("PlayDeckBridge", "GetUserHandler", JSON.stringify(playdeck.value))
         }
-        else if (playdeck.method === "getScore") {
-            _unityInstance?.SendMessage("PlayDeckBridge", "GetScoreHandler", JSON.stringify(playdeck.value))
-        }
         else if (playdeck.method === "getData") {
             _unityInstance?.SendMessage("PlayDeckBridge", "GetDataHandler", JSON.stringify(playdeck.value.data))
         }
