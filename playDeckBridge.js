@@ -26,6 +26,14 @@ var playDeckBridge = (function() {
             console.log(playdeck.value);
             _unityInstance?.SendMessage("PlayDeckBridge", "GetPaymentInfoHandler", JSON.stringify(playdeck.value))
         }
+        else if (playdeck.method === "getShareLink") {
+            console.log(playdeck.value);
+            _unityInstance?.SendMessage("PlayDeckBridge", "GetShareLinkHandler", playdeck.value);
+        }
+        else if (playdeck.method === "getPlaydeckState") {
+            console.log(playdeck.value);
+            _unityInstance?.SendMessage("PlayDeckBridge", "GetPlaydeckStateHandler", playdeck.value);
+        }
         else if (playdeck.method === "setScore") {
             console.log(playdeck);
         }
