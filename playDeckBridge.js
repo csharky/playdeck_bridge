@@ -32,7 +32,7 @@ var playDeckBridge = (function() {
         }
         else if (playdeck.method === "getPlaydeckState") {
             console.log(playdeck.value);
-            _unityInstance?.SendMessage("PlayDeckBridge", "GetPlaydeckStateHandler", playdeck.value);
+            _unityInstance?.SendMessage("PlayDeckBridge", "GetPlaydeckStateHandler", playdeck.value ? 1 : 0 );
         }
         else if (playdeck.method === "setScore") {
             console.log(playdeck);
