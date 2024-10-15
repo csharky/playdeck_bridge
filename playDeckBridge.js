@@ -13,7 +13,9 @@ var playDeckBridge = (function() {
             _unityInstance?.SendMessage("PlayDeckBridge", "GetUserHandler", JSON.stringify(playdeck.value))
         }
         else if (playdeck.method === "getData") {
-            const data = playdeck?.value?.data?.value?.toString() ?? "";
+            let data = playdeck?.value?.data?.toString();
+            console.log("playdeck data: " + data)
+            if (!data) data = "";
             _unityInstance.SendMessage("PlayDeckBridge", "GetDataHandler", data);
         }
         else if (playdeck.method === "requestPayment") {
