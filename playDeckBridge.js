@@ -14,7 +14,7 @@ var playDeckBridge = (function() {
         }
         else if (playdeck.method === "getData") {
             let data = playdeck?.value?.data?.toString();
-            console.log("playdeck data: " + data)
+            console.log("playdeck data: " + data);
             if (!data) data = "";
             _unityInstance.SendMessage("PlayDeckBridge", "GetDataHandler", data);
         }
